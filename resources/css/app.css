@@ -1,0 +1,23 @@
+/* Import fonts.css where font-face is defined */
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    font-family: 'MonlamTibetan', sans-serif!important;
+    line-height: 2!important;
+  }
+/* Apply Monlam Tibetan font to the entire website */
+body {
+  font-family: 'MonlamTibetan', sans-serif!important;
+  line-height: 2!important;
+}
+
+/* Ensure Tibetan text displays properly */
+.tibetan-text {
+  font-family: 'MonlamTibetan', sans-serif!important;
+  line-height: 2!important;
+}
