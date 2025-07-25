@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->timestamp('last_activity_at')
                   ->nullable()
-                  ->after('last_login_ip')
+                  ->after('email_verified_at')
                   ->comment('Tracks the last time the user was active on the site');
         });
     }

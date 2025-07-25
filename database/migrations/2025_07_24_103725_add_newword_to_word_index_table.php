@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('wordIndex', function (Blueprint $table) {
-            $table->index('word', 'wordindex_word_index');
-            $table->index('explanation', 'wordindex_explanation_index');
+            $table->boolean('newword')
+                  ->default(false)
+                  ->after('explanation')
+                  ->comment('Flag to indicate if this is a new word entry');
         });
     }
 
@@ -23,8 +25,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('wordIndex', function (Blueprint $table) {
-            $table->dropIndex('wordindex_word_index');
-            $table->dropIndex('wordindex_explanation_index');
+            $table->dropColumn('newword');
         });
     }
 };
