@@ -13,16 +13,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        // Create test user
+        // Create admin user
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin',
+            'email' => 'admin@monlamdic.org',
+            'password' => bcrypt('password'), // Set a default password
         ]);
 
-        // Create admin user
+        // Run the WordIndex seeder
         $this->call([
+            WordIndexSeeder::class,
             AdminUserSeeder::class,
         ]);
     }
